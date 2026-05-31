@@ -486,7 +486,7 @@ add_library( opennurbsStatic STATIC
     )
 
 ## opennurbs shared library
-add_library( OpenNURBS SHARED
+add_library( OpenNURBS SHARED EXCLUDE_FROM_ALL
     ${OPENNURBS_PUBLIC_HEADERS}
     ${OPENNURBS_PUBLIC_SOURCES}
     ${OPENNURBS_PUBLIC_MEMORY}
