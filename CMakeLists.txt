@@ -611,18 +611,18 @@ target_link_libraries( OpenNURBS Shlwapi Usp10 zlibstatic)
 target_link_libraries( opennurbsStatic Shlwapi Usp10 zlibstatic)
 endif()
 
-if (APPLE)
-   set_target_properties( OpenNURBS PROPERTIES
-FRAMEWORK TRUE
-FRAMEWORK_VERSION A
-# MACOSX_FRAMEWORK_IDENTIFIER "com.mcneel.OpenNURBS"
-# VERSION "8.0.0"
-# SOVERSION  "8.0.0"
-PUBLIC_HEADER "${OPENNURBS_PUBLIC_HEADERS}"
-)
+# if (APPLE)
+#    set_target_properties( OpenNURBS PROPERTIES
+# FRAMEWORK TRUE
+# FRAMEWORK_VERSION A
+# # MACOSX_FRAMEWORK_IDENTIFIER "com.mcneel.OpenNURBS"
+# # VERSION "8.0.0"
+# # SOVERSION  "8.0.0"
+# PUBLIC_HEADER "${OPENNURBS_PUBLIC_HEADERS}"
+# )
 
-   install( TARGETS OpenNURBS DESTINATION "Frameworks")
-else()
-   install( TARGETS OpenNURBS DESTINATION "lib" )
-   install( FILES ${OPENNURBS_PUBLIC_HEADERS} DESTINATION "include/OpenNURBS")
-endif()
+#    install( TARGETS OpenNURBS DESTINATION "Frameworks")
+# else()
+#    install( TARGETS OpenNURBS DESTINATION "lib" )
+#    install( FILES ${OPENNURBS_PUBLIC_HEADERS} DESTINATION "include/OpenNURBS")
+# endif()
