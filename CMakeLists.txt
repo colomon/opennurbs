@@ -474,7 +474,7 @@ if (ANDROID OR LINUX)
   add_subdirectory(freetype263)
 endif()
 
-add_subdirectory(zlib)
+# add_subdirectory(zlib)
 
 ## opennurbs static library
 add_library( opennurbsStatic STATIC
