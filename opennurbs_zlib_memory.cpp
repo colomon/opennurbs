@@ -23,6 +23,7 @@
 
 #include "opennurbs_zlib.h"
 
+#if 0
 voidpf zcalloc(voidpf, unsigned items, unsigned size)
 {
   return oncalloc(items, size);
@@ -32,3 +33,4 @@ void  zcfree(voidpf, voidpf ptr)
 {
   onfree(ptr);
 }
+#endif

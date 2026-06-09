@@ -2,6 +2,17 @@ cmake_minimum_required (VERSION 3.16)
 #set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
 project(opennurbs CXX)
 
+include(FetchContent)
+
+FetchContent_Declare(
+   zlib
+   GIT_REPOSITORY https://github.com/madler/zlib
+   GIT_TAG        master
+   EXCLUDE_FROM_ALL
+)
+
+FetchContent_MakeAvailable(zlib)
+
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -576,8 +587,8 @@ else()
 endif()
 
 
-target_compile_definitions(opennurbsStatic PRIVATE ON_COMPILING_OPENNURBS Z_PREFIX MY_ZCALLOC)
-target_compile_definitions(OpenNURBS PRIVATE OPENNURBS_EXPORTS Z_PREFIX MY_ZCALLOC)
+target_compile_definitions(opennurbsStatic PRIVATE ON_COMPILING_OPENNURBS)
+target_compile_definitions(OpenNURBS PRIVATE OPENNURBS_EXPORTS)
 
 target_include_directories(opennurbsStatic PUBLIC .)
 target_include_directories(OpenNURBS PUBLIC .)
